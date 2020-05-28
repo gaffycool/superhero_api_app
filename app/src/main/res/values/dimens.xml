@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="standard_half_margin">8dp</dimen>
+    <dimen name="standard_margin">16dp</dimen>
+    <dimen name="standard_small_margin">4dp</dimen>
+    <dimen name="min_hero_picture_size">48dp</dimen>
+</resources>

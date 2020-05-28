@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="hero"
+            type="com.dttden.api.model.Hero" />
+
+        <variable
+            name="itemClickListener"
+            type="com.dttden.hero.ui.heroes.HeroesAdapter.OnItemClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> itemClickListener.onItemClicked(hero)}"
+        android:padding="@dimen/standard_margin">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/H1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_half_margin"
+            android:maxLines="1"
+            android:text="@{hero.name}"
+            app:layout_constraintStart_toEndOf="@+id/thumbIcon"
+            app:layout_constraintTop_toTopOf="@+id/thumbIcon" />
+
+        <TextView
+            android:id="@+id/description"
+            style="@style/Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:text="@{String.valueOf(hero.score)}"
+            app:layout_constraintEnd_toEndOf="@+id/title"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/thumbIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/min_hero_picture_size"
+            android:minHeight="@dimen/min_hero_picture_size"
+            app:heroPicture="@{hero.picture}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
