@@ -6,4 +6,4 @@ for that particular year
 
 i also implemented dagger, clean archetecture, and offline caching using a local db
 
-
+![alt text](https://github.com/[gaffycool]/[superhero_api_app]/blob/[master]/image.jpg?raw=true)
